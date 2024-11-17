@@ -1,7 +1,7 @@
 <div class="ekart--product--container">
   <!-- <img src={{product.pImage}}> -->
 
-  <img [src]="product.pImage" />
+    <!-- <img [src]="product.pImage" />
 
   <p>Name: {{ product.name }}</p>
   <p>Price: {{ "$" + product.price }}</p>
@@ -17,10 +17,12 @@
     <button (click)="decrementValueInCart()" [disabled]="addToCart == 0"> - </button>
       <span>{{addToCart}}</span>
     <button (click)="incerementValueInCart()" [disabled]="addToCart == product.inStock"> + </button>
-    <!-- <input (input)="onNamechange($event)" /><br /> -->
-  </p>
+    <input (input)="onNamechange($event)" /><br />
+  </p> -->
 
   <!-- <p>name: {{ name }}</p> -->
   <!-- <input bind-value="name" [attr.aria-hidden]=""> -->
   <!--disabled, hidden, checked-->
+
+  <app-search></app-search>
 </div>
