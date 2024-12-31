@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
@@ -59,7 +59,7 @@ export class ProductListComponent {
     },
     {
       id: 3,
-      name: "Nike React Infinity Run Flyknit 3" ,
+      name: "Addidas React Infinity Run Flyknit 3" ,
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text " +
         "ever since the 150s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only " +
         "five centuries, but also the leap into electronic typesetting, remaining essential ly unchanged. It was popularised in the 1960s With the release" +
@@ -78,7 +78,7 @@ export class ProductListComponent {
     },
     {
       id: 3,
-      name: "Nike React Infinity Run Flyknit 3" ,
+      name: "addidas React Infinity Run Flyknit 3" ,
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text " +
         "ever since the 150s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only " +
         "five centuries, but also the leap into electronic typesetting, remaining essential ly unchanged. It was popularised in the 1960s With the release" +
@@ -102,6 +102,9 @@ export class ProductListComponent {
   outOfStockNumberOfProducts = this.products.filter(p => !p.is_in_inventory).length;
 
   selectedFilterRadioButton: string = 'all'
+
+  @Input()
+  searchText: string = ''
 
   onFilterChanged(event: string) {
     this.selectedFilterRadioButton = event

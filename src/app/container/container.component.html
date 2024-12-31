@@ -1,8 +1,6 @@
 <div class="ekart--product--container">
   <!-- <img src={{product.pImage}}> -->
-
     <!-- <img [src]="product.pImage" />
-
   <p>Name: {{ product.name }}</p>
   <p>Price: {{ "$" + product.price }}</p>
   <p>Color: {{ product.color }}</p>
@@ -19,14 +17,11 @@
     <button (click)="incerementValueInCart()" [disabled]="addToCart == product.inStock"> + </button>
     <input (input)="onNamechange($event)" /><br />
   </p> -->
-
   <!-- <p>name: {{ name }}</p> -->
   <!-- <input bind-value="name" [attr.aria-hidden]=""> -->
   <!--disabled, hidden, checked-->
-
-  <app-search></app-search>
-  <product-list></product-list>
-
+  <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+  <product-list [searchText]="searchText" ></product-list>
 <!--  <div *ngFor="let name of listOfNames">-->
 <!--    <a> {{ name }}</a>-->
 <!--  </div>-->

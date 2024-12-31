@@ -5,8 +5,9 @@
 
 </app-filter>
 <div class="ekart--product--container">
+<!--  *ngIf="selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton"-->
   <div *ngFor="let prod of products;let i = index">
-    <app-product [product]="prod" *ngIf="selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton"> {{i}} </app-product>
+    <app-product [product]="prod" *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"> {{i}} </app-product>
   </div>
 </div>
 

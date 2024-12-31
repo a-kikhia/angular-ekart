@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
 
@@ -14,10 +14,15 @@ import { NgClass, NgIf } from '@angular/common';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
+
   searchText: string = ''
 
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>()
 
-  // updateSearchText(event: any) {
-  //   this.searchText = event.target.value
-  // }
+  updateSearchText(inputEL: HTMLInputElement) {
+    this.searchText = inputEL.value
+    this.searchTextChanged.emit(this.searchText)
+  }
+
 }
