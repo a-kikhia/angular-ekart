@@ -21,7 +21,7 @@
   <!-- <input bind-value="name" [attr.aria-hidden]=""> -->
   <!--disabled, hidden, checked-->
   <app-search (searchTextChanged)="setSearchText($event)"></app-search>
-  <product-list [searchText]="searchText"></product-list>
+  <product-list [searchText]="searchText" #productListComponent></product-list>
   <product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></product-detail>
 <!--  <div *ngFor="let name of listOfNames">-->
 <!--    <a> {{ name }}</a>-->

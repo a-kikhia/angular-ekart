@@ -1,14 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/Product';
 import { ProductListComponent } from '../product-list/product-list.component';
-import { NgForOf, NgIf } from '@angular/common';
+import { NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'product-detail',
   standalone: true,
   imports: [
     NgIf,
-    NgForOf
+    NgForOf,
+    NgTemplateOutlet
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
