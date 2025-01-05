@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgForOf, NgIf, NgStyle } from '@angular/common';
+import { Product } from '../../../models/Product';
 
 @Component({
   selector: 'app-product',
@@ -15,22 +16,7 @@ import { NgForOf, NgIf, NgStyle } from '@angular/common';
 export class ProductComponent {
 
   @Input()
-  product: {
-    id: number;
-    name: string;
-    description: string;
-    brand: string;
-    gender: string;
-    category: string;
-    size: number[];
-    color: string[];
-    price: number;
-    discountPrice?: number;
-    is_in_inventory: boolean;
-    items_left: number;
-    imageURL: string;
-    slug: string;
-  } ;
+  product: Product ;
 
   calculateDiscount(discountedPrice: number, originalPrice: number){
     return (100 - (discountedPrice / originalPrice * 100)).toFixed(0);
