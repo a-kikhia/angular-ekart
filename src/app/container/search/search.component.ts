@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
 
@@ -15,14 +15,21 @@ import { NgClass, NgIf } from '@angular/common';
 })
 export class SearchComponent {
 
-  searchText: string = ''
+  searchText: string = '';
 
   @Output()
-  searchTextChanged: EventEmitter<string> = new EventEmitter<string>()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  updateSearchText(inputEL: HTMLInputElement) {
-    this.searchText = inputEL.value
-    this.searchTextChanged.emit(this.searchText)
+  //1. read: Use it ro read the different token from the queried elements.
+  //2. static: Determines when the query is resolved. --> @ViewChild('searchInput',{static: true}) is the same as @ViewChild('searchInput')
+  //           True is the view is initialized for the first time.
+  //           False if you want to be resolved after every change detection.
+  @ViewChild('searchInput')
+  searchInputEl: ElementRef;
+
+  updateSearchText() {
+    this.searchText = this.searchInputEl.nativeElement.value;
+    this.searchTextChanged.emit(this.searchText);
   }
 
 }

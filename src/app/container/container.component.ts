@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -15,6 +15,9 @@ export class ContainerComponent {
   listOfNames: string[] = ['Home', 'Mans', 'Omar', 'Ahmed','Rashid'];
 
   searchText: string = ''
+
+  @ViewChild(ProductListComponent)
+  productListComponent: ProductListComponent;
 
   setSearchText(value: string) {
     this.searchText = value
