@@ -1,29 +1,23 @@
 <div class="ekart--product--container">
-  <!-- <img src={{product.pImage}}> -->
-    <!-- <img [src]="product.pImage" />
-  <p>Name: {{ product.name }}</p>
-  <p>Price: {{ "$" + product.price }}</p>
-  <p>Color: {{ product.color }}</p>
-  <p>Dicounted Price: {{ getDiscountedPrice().toFixed(2) }}</p>
-  <p></p>
-  <p>
-    {{
-      product.inStock > 0 ? "Only " + product.inStock + " left" : "Not in Stock"
-    }}
-  </p>
-  <p>
-    <button (click)="decrementValueInCart()" [disabled]="addToCart == 0"> - </button>
-      <span>{{addToCart}}</span>
-    <button (click)="incerementValueInCart()" [disabled]="addToCart == product.inStock"> + </button>
-    <input (input)="onNamechange($event)" /><br />
-  </p> -->
-  <!-- <p>name: {{ name }}</p> -->
-  <!-- <input bind-value="name" [attr.aria-hidden]=""> -->
-  <!--disabled, hidden, checked-->
   <app-search (searchTextChanged)="setSearchText($event)"></app-search>
   <product-list [searchText]="searchText" #productListComponent></product-list>
   <product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></product-detail>
-<!--  <div *ngFor="let name of listOfNames">-->
-<!--    <a> {{ name }}</a>-->
-<!--  </div>-->
+
+  <div class="ekart-featured-products">
+    <div class="ekart-featured-product-heading">
+      <h1> ich bin hier!!</h1>
+    </div>
+   <featured-brands>
+     <h3 class="title">New Arrivals in Nike</h3>
+     <button class="call-to-action">Show new Arrivals in Nike</button>
+   </featured-brands>
+   <featured-brands>
+     <h3 class="title">New Arrivals in adidas</h3>
+     <button class="call-to-action">Show new Arrivals in adidas</button>
+   </featured-brands>
+   <featured-brands>
+     <h3 class="title">New Arrivals in Reebok</h3>
+     <button class="call-to-action">Show new Arrivals in Reebok</button>
+   </featured-brands>
+  </div>
 </div>
