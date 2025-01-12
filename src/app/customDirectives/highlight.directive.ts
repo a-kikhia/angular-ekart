@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]',
@@ -6,11 +6,16 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 })
 export class HighlightDirective {
 
+  @Input()
+  isInInventory: boolean
+
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('mouseenter')
   OnMouseEnter(){
-    this.renderer.addClass(this.element.nativeElement, 'highlight-product');
+    if (this.isInInventory){
+      this.renderer.addClass(this.element.nativeElement, 'highlight-product');
+    }
   }
 
   @HostListener('mouseleave')
