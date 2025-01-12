@@ -68,7 +68,7 @@ span{
   border-radius: 5px;
 }
 .ekart-product-detail-available-size{
-  margin: 0px 0px;
+  margin: 2px 2px;
   background-color: #28282B;
   color:white;
   border-radius: 0px;
@@ -90,11 +90,11 @@ span{
   margin: 20px 0px;
 }
 .btn-add-to-cart{
-  border: none;
-  background-color: #28282B;
+  /*border: none;*/
+  /*background-color: #28282B;*/
   padding: 10px 30px;
   font-size: 20px;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 .scroll {

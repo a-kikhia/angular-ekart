@@ -3,6 +3,7 @@ import { Product } from '../../models/Product';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 import { SetBackground } from '../../customDirectives/SetBackground.directive';
+import { AppHoverDirective } from '../../customDirectives/app-hover.directive';
 
 @Component({
   selector: 'product-detail',
@@ -11,7 +12,8 @@ import { SetBackground } from '../../customDirectives/SetBackground.directive';
     NgIf,
     NgForOf,
     NgTemplateOutlet,
-    SetBackground
+    SetBackground,
+    AppHoverDirective
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'

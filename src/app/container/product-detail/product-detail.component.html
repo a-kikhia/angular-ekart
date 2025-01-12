@@ -31,8 +31,8 @@
       <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
         <h4>Available Size</h4>
       </div>
-      <div style="margin-top: 20px" *ngFor="let size of product.size">
-        <span class="ekart-product-detail-available-size">{{size}}</span>
+      <div style="margin-top: 20px">
+        <span *ngFor="let size of product.size" class="ekart-product-detail-available-size">{{size}}</span>
       </div>
     </div>
 
@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="ekart-product-detail-addtoCart">
-    <button class="btn-add-to-cart" *ngIf="product.is_in_inventory; else notifyMe">ADD TO CART</button>
+    <button class="btn-add-to-cart" *ngIf="product.is_in_inventory; else notifyMe" appHover>ADD TO CART</button>
     <ng-template #notifyMe>
       <button class="btn-add-to-cart">NOTIFY ME</button>
     </ng-template>
